@@ -1,0 +1,24 @@
+<form>
+
+<div class="form-group">
+
+<label for="login">Usuario</label>
+<input type="email" class="form-control" #email="ngModel" [(ngModel)]="usuario.login" id="login" name="login" placeholder="Informe o Usuario">
+<div *ngIf="email.invalid" class="alert alert-danger">
+    Informe o Usuário
+</div>
+</div>
+
+<div class="form-group">
+
+<label for="senha">Senha</label>
+<input type="password" class="form-control" #senha="ngModel" [(ngModel)]="usuario.senha" id="senha" name="senha" placeholder="Informe a Senha">
+<div *ngIf="senha.invalid" class="alert alert-danger"> 
+    Informar senha
+</div>
+
+</div>
+
+<button type="button" [disabled]="email.invalid // senha.invalid" class="btn btn-primary" id="btn btn-primary" (click)="login()">ACESSAR</button>
+
+</form>
